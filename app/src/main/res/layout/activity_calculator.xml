@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculatorActivity"
+    android:id="@+id/layout_drawer"
+    android:theme="@style/Theme.Calculator"
+    android:background="?attr/colorMain">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorToolbar">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="123dp">
+
+        <TextView
+            android:id="@+id/txt_expression"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:textColor="?attr/colorMainText"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_expression"
+            android:layout_alignRight="@+id/txt_expression"
+            android:layout_marginTop="10dp"
+            android:textColor="?attr/colorMainText"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <View
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            />
+
+        <ImageButton
+            android:id="@+id/btn_mic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="@xml/micbutton"
+            android:clickable="true"
+            android:tint="?attr/colorMainText"
+            android:src="@drawable/outline_mic_black_24" />
+
+    </LinearLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*">
+
+        <!-- 0행 버튼 -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/btn_C"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:textSize="30sp"
+                android:layout_margin="5dp"
+                android:background="@xml/elsebutton"
+                android:textColor="?attr/colorElseText"
+                android:text="C" />
+
+            <Button
+                android:id="@+id/btn_open"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:textSize="30sp"
+                android:layout_margin="5dp"
+                android:background="@xml/elsebutton"
+                android:textColor="?attr/colorElseText"
+                android:text="(" />
+
+            <Button
+                android:id="@+id/btn_close"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:textSize="30sp"
+                android:layout_margin="5dp"
+                android:background="@xml/elsebutton"
+                android:textColor="?attr/colorElseText"
+                android:text=")" />
+
+            <Button
+                android:id="@+id/btn_per"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:textSize="30sp"
+                android:layout_margin="5dp"
+                android:background="@xml/funcbutton"
+                android:textColor="?attr/colorOperationText"
+                android:text="%" />
+        </TableRow>
+        <!-- 1행 버튼 -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <Button
+            android:id="@+id/btn_div2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="⅟𝓍" />
+
+        <Button
+            android:id="@+id/btn_square"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="𝓍²" />
+
+        <Button
+            android:id="@+id/btn_root"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="√𝓍" />
+
+        <Button
+            android:id="@+id/btn_mul"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/funcbutton"
+            android:textColor="?attr/colorOperationText"
+            android:text="*" />
+    </TableRow>
+        <!-- 2행 버튼 -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_7"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn_8"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn_9"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btn_div"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/funcbutton"
+            android:textColor="?attr/colorOperationText"
+            android:text="/" />
+    </TableRow>
+        <!-- 3행 버튼 -->
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btn_4"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn_5"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btn_6"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btn_sub"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/funcbutton"
+            android:textColor="?attr/colorOperationText"
+            android:text="-" />
+    </TableRow>
+        <!-- 4행 버튼 -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn_3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/funcbutton"
+            android:textColor="?attr/colorOperationText"
+            android:text="+" />
+        </TableRow>
+        <!-- 5행 버튼 -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btn_dot"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="." />
+
+        <Button
+            android:id="@+id/btn_0"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:text="0" />
+
+        <ImageButton
+            android:id="@+id/btn_del"
+            android:clickable="true"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/button"
+            android:elevation="2dp"
+            android:src="@drawable/outline_backspace_black_24"
+            android:tint="?attr/colorMainText"
+            />
+
+        <Button
+            android:id="@+id/btn_result"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="30sp"
+            android:layout_margin="5dp"
+            android:background="@xml/funcbutton"
+            android:textColor="?attr/colorOperationText"
+            android:text="=" />
+    </TableRow>
+    </TableLayout>
+</LinearLayout>
+
+<!-- 사이드 drawer -->
+<com.google.android.material.navigation.NavigationView
+    android:id="@+id/nav"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    app:headerLayout="@layout/drawer_header"
+    app:menu="@menu/drawer_menu"
+    />
+</androidx.drawerlayout.widget.DrawerLayout>
