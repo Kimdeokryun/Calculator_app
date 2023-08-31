@@ -43,12 +43,13 @@ Android SDK 33
 
 ### 시연영상
 - 다크 모드 전환
+![다크모드](https://github.com/Kimdeokryun/Calculator_app/assets/96904134/3d82a389-3c7c-4bf6-bfd6-5c6358dcf608)
 
   
 - 계산식 음성인식
-  
-![20230831_231331](https://github.com/Kimdeokryun/Calculator_app/assets/96904134/b634df1f-6c74-4c5c-a268-3f1907b40174)
-
+![음성인식](https://github.com/Kimdeokryun/Calculator_app/assets/96904134/90ce8c5d-ae98-4fca-8e75-44735ca2dc08)
 
   
 - 계산 히스토리 및 불러오기
+![계산기능](https://github.com/Kimdeokryun/Calculator_app/assets/96904134/14e67a88-7f50-46fe-9348-0fd30ed5a652)
+
