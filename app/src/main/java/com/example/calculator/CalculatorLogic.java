@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 public class CalculatorLogic {
 
+    // c++ ndk library 설정
     static {
         System.loadLibrary("calculator");
     }
@@ -17,6 +18,7 @@ public class CalculatorLogic {
     private TextView expressionEditText;
     private TextView resultTextView;
 
+    // c++ ndk 함수
     public native String resultFromCalculator(String currentText);
     public native String stringFromJNI();
 
@@ -26,6 +28,7 @@ public class CalculatorLogic {
         this.resultTextView = resultTextView;
     }
 
+    // c++ 계산 및 textview 세팅
     public String calculate(){
         String currentText = expressionEditText.getText().toString();
         String buttonText = "";

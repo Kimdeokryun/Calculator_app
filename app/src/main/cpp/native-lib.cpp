@@ -6,6 +6,7 @@
 
 #include <android/log.h>
 
+// c++ ndk 기본 함수
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_example_calculator_CalculatorLogic_stringFromJNI(
         JNIEnv* env,
@@ -17,7 +18,7 @@ Java_com_example_calculator_CalculatorLogic_stringFromJNI(
     return env->NewStringUTF(hello.c_str());
 }
 
-// string 계산식  계산 후 string 결과값 return 함수
+// c++ ndk  string 계산식  계산 후 string 결과값 return 함수
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_example_calculator_CalculatorLogic_resultFromCalculator(
         JNIEnv* env,

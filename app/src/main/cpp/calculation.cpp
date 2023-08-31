@@ -9,7 +9,7 @@ calculation::calculation(string cal) {
 // 연산자 우선 순위
 int calculation::precedence(char op) {
     if (op == '+' || op == '-') return 1;
-    else if (op == '*' || op == '/') return 2;
+    else if (op == '*' || op == '/' || op == '%') return 2;
     else if (op == '^') return 3;
     return 0; // 연산자가 아닌 경우
 }
@@ -21,6 +21,7 @@ double calculation::applyOperator(double a, double b, char op) {
     case '-': return a - b;
     case '*': return a * b;
     case '/': return a / b;
+    case '%': return fmod(a, b);
     case '^': return pow(a, b);
     default: return 0.0; // 오류 처리
     }
@@ -33,6 +34,7 @@ double calculation::evaluateExpression() {
     stack<char> operators;
 
     string token;
+
     while (iss >> token) {
         // 연산자를 처리합니다.
 
@@ -55,7 +57,7 @@ double calculation::evaluateExpression() {
             operators.push('(');
         }
         else if (token == ")") {
-            // 오른쪽 괄호를 만날 때까지 연산자를 처리합니다.
+            // 왼쪽 괄호를 만날 때까지 연산자를 처리합니다.
 
             while (!operators.empty()) {
                 // 루트 연산자의 경우에만 처리 하도록 로직 구현.
@@ -112,6 +114,7 @@ double calculation::evaluateExpression() {
             operators.push(token[0]);
         }
     }
+
 
     // 스택에 남아있는 연산을 처리합니다.
     while (!operators.empty()) {
