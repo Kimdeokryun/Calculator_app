@@ -23,6 +23,7 @@ public class ButtonClickListener {
 
         if (currentText.length()>0){
             if(currentText.endsWith(" ")){
+                //  del 키로  띄어쓰기 부분도 같이 삭제 하도록
                 if (currentText.length()>=3)
                 {
                     currentText = currentText.substring(0, currentText.length() - 3);
@@ -46,8 +47,6 @@ public class ButtonClickListener {
         // 버튼의 텍스트를 가져와서 EditText에 추가
         String currentText = expressionEditText.getText().toString();
         String operator = "";
-        Log.d("currentText", currentText);
-        Log.d("operator", Integer.toString(buttonId));
 
         switch (buttonId) {
             case R.id.btn_div2:

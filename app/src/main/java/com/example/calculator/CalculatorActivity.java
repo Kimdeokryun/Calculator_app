@@ -130,9 +130,12 @@ public class CalculatorActivity extends AppCompatActivity {
         btnResult.setOnClickListener(view ->  {
             String buttonText = CL.calculate();
             if (!buttonText.equals("")){
+
+                // calculation history  drawer 부분에 버튼형 결과 히스토리 생성
                 Button button = new Button(this);
                 button.setText(buttonText);
 
+                // 히스토리 버튼 클릭 리스터 생성
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -142,6 +145,7 @@ public class CalculatorActivity extends AppCompatActivity {
                         String part2 = parts[1];    // 결과값
                         expressionEditText.setText(part1);
                         resultTextView.setText(part2);
+                        // drawer 닫기
                         drawerLayout.close();
                     }
                 });
@@ -188,6 +192,7 @@ public class CalculatorActivity extends AppCompatActivity {
         }
     }
 
+    // 음성인식 api 부분
     public RecognitionListener listener = new RecognitionListener() {
         public void onReadyForSpeech(Bundle params) {
             Toast.makeText(getApplicationContext(),"음성인식을 시작합니다.",Toast.LENGTH_SHORT).show();
@@ -249,12 +254,16 @@ public class CalculatorActivity extends AppCompatActivity {
             // 말을 하면 ArrayList에 단어를 넣고 textView에 단어를 이어줍니다.
             ArrayList<String> matches =
                     results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+
+            // 계산식 및 결과 값 초기화 후 다시 입력
             expressionEditText.setText("");
             resultTextView.setText("");
             for(int i = 0; i < matches.size() ; i++){
                 expressionEditText.setText(matches.get(i));
             }
             Log.d("mic off", "mic off");
+
+            // 결과 값 버튼 강제 클릭
             btnResult.performClick();
         }
         public void onPartialResults(Bundle partialResults) {}
