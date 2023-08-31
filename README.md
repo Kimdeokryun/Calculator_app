@@ -25,18 +25,20 @@ C++ NDK 를 사용하여 JString 형 계산식을 istringstream으로 쪼개고,
 - 계산 히스토리 기능
 
 ## 사용 기술 및 도구
-
 ### 언어
 Java
 
 C++
 
 ### API
+
 android speech Recognition(ko-KR) api
 
 ### 환경
 Android Studio
+
 NDK 23.1 (Java 와 Kotlin 모두 NDK 활용 가능.)
+
 Android SDK 33
 
 ### 시연영상
