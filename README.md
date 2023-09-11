@@ -120,11 +120,14 @@ Java_com_example_calculator_CalculatorLogic_resultFromCalculator(
 계산 히스토리 기능을 추가하여 계산 이후 히스토리에 버튼형으로 추가되고, 버튼 클릭 시 로드할 수 있도록 구현하였습니다.
 
 #### 음성인식 버튼
+![image](https://github.com/Kimdeokryun/Calculator_app/assets/96904134/55d561e4-f76c-4a5b-9342-95221f7a8eab)
 
 
 #### 계산 히스토리 (다크 모드)
+![image](https://github.com/Kimdeokryun/Calculator_app/assets/96904134/9eb1cc0b-180a-4682-b624-8ac0ca536b92)
 
 
 #### 계산 히스토리 (라이트 모드)
+![image](https://github.com/Kimdeokryun/Calculator_app/assets/96904134/ab4fbbe9-e00d-4985-b9d3-fe396fef158b)
 
 
